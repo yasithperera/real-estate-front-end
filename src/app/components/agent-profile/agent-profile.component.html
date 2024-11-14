@@ -1,3 +1,4 @@
+<app-header/>
 <div class="agent-profiles">
   <div class="agent-card" *ngFor="let agent of agents">
     <img [src]="agent.profileImage" alt="{{ agent.name }}" class="agent-image">
@@ -7,3 +8,4 @@
     <a [routerLink]="['/agent', agent.id]" class="view-details">View Profile</a>
   </div>
 </div>
+<app-footer/>
