@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="property-detail">
+  <h2>{{ property?.title }}</h2>
+
+  <div *ngIf="property!.images!.length > 0">
+    <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div *ngFor="let image of property?.images; let i = index"
+             class="carousel-item" [class.active]="i === 0">
+          <img [src]="image" class="d-block w-100" alt="Property Image {{i + 1}}">
+        </div>
+      </div>
+
+<!--      <div class="d-flex justify-content-between">-->
+        <button class="carousel-control-prev btn-primary w-25" type="button" data-bs-target="#propertyCarousel"
+                data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next btn-primary w-25" type="button" data-bs-target="#propertyCarousel"
+                data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+<!--      </div>-->
+    </div>
+  </div>
+
+  <div class="property-info">
+    <p>{{ property?.description }}</p>
+    <p><strong>Price:</strong> {{ property?.price | currency }}</p>
+    <p><strong>Location:</strong> {{ property?.location }}</p>
+    <p><strong>Size:</strong> {{ property?.size }} sqft</p>
+  </div>
+
+  <button mat-raised-button color="accent">Contact Agent</button>
+
+</div>
+
+
+
+<app-footer></app-footer>

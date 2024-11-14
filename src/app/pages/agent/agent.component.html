@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="agent-profile d-flex gap-5 p-5" *ngIf="agent">
+  <section>
+    <img [src]="agent.profileImage" alt="{{ agent.name }}">
+  </section>
+  <section>
+    <h2>{{ agent.name }}</h2>
+    <p><strong>Email:</strong> {{ agent.email }}</p>
+    <p><strong>Phone:</strong> {{ agent.phone }}</p>
+    <h3>Properties Handled</h3>
+    <ul>
+      <li *ngFor="let propertyId of agent.properties">
+        <!-- Link to property details or display property details here -->
+        Property ID: {{ propertyId }}
+      </li>
+    </ul>
+  </section>
+</div>
+<div id="footer-div">
+  <app-footer></app-footer>
+</div>
+

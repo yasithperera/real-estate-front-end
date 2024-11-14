@@ -1,0 +1,17 @@
+<header>
+  <div class="logo">
+    <a routerLink="/">
+      <img src="/assets/images/logo.png" alt="Real Estate Logo">
+    </a>
+    <h1>Real Estate LK</h1>
+  </div>
+  <nav>
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+    <ul [class.active]="menuActive">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/listings">Properties</a></li>
+      <li><a routerLink="/agents">Agents</a></li>
+      <li><a routerLink="/contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>

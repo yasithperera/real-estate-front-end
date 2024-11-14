@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="property-list">
+  <div *ngFor="let property of properties" class="property-card">
+    <img [src]="property.images[0]" alt="{{ property.title }}">
+    <h3>{{ property.title }}</h3>
+    <p>{{ property.location }}</p>
+    <p>{{ property.price | currency }}</p>
+    <button mat-raised-button color="primary" [routerLink]="['/property', property.id]">View Details</button>
+  </div>
+</div>
+<app-footer></app-footer>
